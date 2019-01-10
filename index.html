@@ -8,8 +8,8 @@
       Tutorial Case
 
       Red Ball Pizza Survey Form
-      Author: 
-      Date:   
+      Author: Rafael Martinez 
+      Date: 1-7-19   
 
       Filename:   rb_survey.html
 
@@ -21,6 +21,7 @@
     <link href="rb_reset.css" rel="stylesheet" />
     <link href="rb_styles.css" rel="stylesheet" />
     <script src="rb_formsubmit"></script>
+    <link rel="stylesheet" href="rb_forms.css">
 
 
 </head>
@@ -54,20 +55,99 @@
             Pizza will not share your contact information with third
             parties, <em>ever</em>. </p>
         <p>Required values are marked by an asterisk (*)</p>
+        <!-- Survey 1 -->
         <form id="survey" action="http://www.example.com/redball/survey" method="POST" enctype="">
-            <fieldset id="cusinfo">
+            <fieldset id="cusInfo">
                 <legend>Customer Information</legend>
+                <div class="formRow">
+                    <label for="name">Name*</label>
+                    <input name="cusName" id="name" type="text" placeholder="First and Last Name">
+                </div>
 
+                <div class="formRow">
+                    <label for="street">Street Address</label>
+                    <input name="cusStreet" id="street" type="text">
+                </div>
+
+                <div class="formRow">
+                    <label for="city">City</label>
+                    <input name="cusCity" id="city" type="text" value="Ormond Beach">
+                </div>
+
+                <div class="formRow">
+                    <label for="state">State</label>
+                    <input name="cusState" id="state" type="text" value="FL">
+                </div>
+                <div class="formRow">
+                    <label for="zip">Post Code</label>
+                    <input name="cusZip" id="zip" type="text" placeholder="nnnnn(-nnnn)">
+                </div>
+                <div class="formRow">
+                    <label for="phone">Phone Number</label>
+                    <input name="cusPhone" id="phone" type="text" placeholder="(nnn) nnn-nnnn">
+                </div>
+                <div class="formRow">
+                    <label for="email">E-mail</label>
+                    <input name="cusEmail" id="email" type="text">
+                </div>
+
+                <div class="formRow">
+                    <label for="info">Where did you hear about us? <br /> (select all that apply) </label>
+                    <select name="infoSrc" id="info" size="5" multiple>
+                        <option value="internet">Internets</option>
+                        <option value="mag">Magazine</option>
+                        <option value="news">Newspaper</option>
+                        <option value="word">Word of Mouth</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                </div>
             </fieldset>
+            <!-- Survey 2 -->
+
             <fieldset id="expInfo">
                 <legend>Share your experience at Red Ball Pizza</legend>
+                <div class="formRow">
+                    <label for="visit">Date of Visit</label>
+                    <input type="date" name="visitDate" id="visit">
+                </div>
+
+                <div class="formRow">
+                    <label for="order">Order Type</label>
+                    <select name="orderType" id="order">
+                        <option value="order1">Carry Out</option>
+                        <option value="order2">Delivery</option>
+                        <option value="order3" selected>Dine In</option>
+                        <option value="order4">Take 'n bake</option>
+                    </select>
+                </div>
+
+                <div class="formRow">
+                    <label>Was your order correct?</label>
+                    <fieldset class="optGroup">
+                        <label for="fYes">Yes</label>
+                        <input type="radio" name="oCorrect" id="fYes" value="Yes" />
+                        <label for="fNo">No</label>
+                        <input type="radio" name="oCorrect" id="fNo" value="No" />
+                    </fieldset>
+                </div>
+
+                <div class="formRow">
+                    <label>Was your food hot?</label>
+                    <fieldset class="optGroup">
+                        <label for="hYes">Yes</label>
+                        <input type="radio" name="foodHot" id="hYes" value="Yes" />
+                        <label for="hNo">No</label>
+                        <input type="radio" name="foodHot" id="hNo" value="No" />
+                    </fieldset>
+                </div>
 
             </fieldset>
-
         </form>
 
 
     </section>
+
     <footer>
         <h1>ORDER</h1>
         <a href="#">Specials</a> <a href="#">Pizza</a> <a href="#">Pasta</a> <a href="#">Wings</a> <a href="#">Sides</a>
